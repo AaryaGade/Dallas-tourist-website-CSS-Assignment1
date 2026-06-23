@@ -1,13 +1,11 @@
-// SLIDESHOW
 let images = [
-    "images/arboretum.jpg",
-    "images/museum.jpg",
-    "images/perot.jpg"
+    "arboretum.jpg",
+    "museum.jpg",
+    "perot.jpg"
 ];
 
 let index = 0;
 
-// Show the current slide
 function showSlide() {
     const slide = document.getElementById("slide");
     if (slide) {
@@ -15,22 +13,18 @@ function showSlide() {
     }
 }
 
-// Move to the next slide
 function nextSlide() {
     index = (index + 1) % images.length;
     showSlide();
 }
 
-// Move to the previous slide
 function prevSlide() {
     index = (index - 1 + images.length) % images.length;
     showSlide();
 }
 
-// Initialize first slide
 document.addEventListener("DOMContentLoaded", showSlide);
 
-// FAVORITE SELECTOR
 const favoriteSelect = document.getElementById("favorite");
 const resultParagraph = document.getElementById("result");
 
