@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractions - Discover Dallas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Slideshow container */
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        /* Slideshow image */
+        #slide {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Slideshow buttons */
+        .buttons button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #f5d6a1;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            color: #0b1f3a;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.2s ease;
+        }
+
+        .buttons button:hover {
+            background-color: #ffdca8;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .buttons button:first-child {
+            left: 10px;
+        }
+
+        .buttons button:last-child {
+            right: 10px;
+        }
+
+        /* Favorite section centering */
+        .favorite-section {
+            text-align: center;
+            margin: 30px auto;
+            font-family: Arial, sans-serif;
+        }
+
+        .favorite-section select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #0b1f3a;
+            font-weight: bold;
+        }
+
+        /* Attraction grid */
+        .attraction-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .attraction-grid .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+            flex: 1 1 250px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .attraction-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        h2.page-title {
+            text-align: center;
+            margin-top: 20px;
+            color: #0b1f3a;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Discover Dallas</h1>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="jfk.html">JFK</a></li>
+            <li><a href="attractions.html">Attractions</a></li>
+            <li><a href="culture.html">Culture</a></li>
+            <li><a href="visit.html">Visit</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="page-nav">
+    <a href="#" class="nav-btn">&laquo; Previous</a>
+    <span>Page 1 of 5</span>
+    <a href="#" class="nav-btn">Next &raquo;</a>
+</div>
+
+<main>
+    <h2 class="page-title">Top Attractions in Dallas</h2>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <img id="slide" src="images/dallasSLIDE.jpg" alt="Dallas attraction slideshow image">
+        <div class="buttons">
+            <button onclick="prevSlide()">❮</button>
+            <button onclick="nextSlide()">❯</button>
+        </div>
+    </div>
+
+    <!-- Favorite Section -->
+    <section class="favorite-section">
+        <h3>Select Your Favorite Attraction</h3>
+        <select id="favorite">
+            <option value="">--Choose an attraction--</option>
+            <option value="Arboretum">Dallas Arboretum</option>
+            <option value="Museum">Dallas Museum of Art</option>
+            <option value="Perot">Perot Museum of Nature and Science</option>
+        </select>
+        <p id="result"></p>
+    </section>
+
+    <!-- Attraction Grid -->
+    <section class="attraction-grid">
+        <div class="card">
+            <img src="images/aboretum.jpg" alt="Dallas Arboretum gardens with flowers">
+            <h3>Dallas Arboretum</h3>
+            <p>🌿 Beautiful gardens and scenic paths at White Rock Lake.</p>
+        </div>
+        <div class="card">
+            <img src="images/museum.jpg" alt="Dallas Museum of Art exterior building">
+            <h3>Dallas Museum of Art</h3>
+            <p>🎨 Global art collections and modern exhibits.</p>
+        </div>
+        <div class="card">
+            <img src="images/perot.jpg" alt="Perot Museum science exhibits and dinosaurs">
+            <h3>Perot Museum</h3>
+            <p>🔬 Interactive science and dinosaur exhibits for all ages.</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Created by Aarya Gade | 2026</p>
+</footer>
+
+<script>
+    
+    let images = [
+        "images/dallasSLIDE.jpg",
+        "images/dallasSLIDE2.jpg",
+        "images/dallasSLIDE3.jpg",
+        "images/dallasSLIDE4.jpg",
+        "images/dallasSLIDE5.jpg",
+        "images/dallasSLIDE6.jpg",
+        "images/dallasSLIDE7.jpg",
+        "images/dallasSLIDE8.jpg"
+    ];
+
+    let index = 0;
+
+    function showSlide() {
+        document.getElementById("slide").src = images[index];
+    }
+
+    function nextSlide() {
+        index = (index + 1) % images.length;
+        showSlide();
+    }
+
+    function prevSlide() {
+        index = (index - 1 + images.length) % images.length;
+        showSlide();
+    }
+
+    // Auto slide every 2 seconds
+    setInterval(nextSlide, 2000);
+
+    // Favorite selector
+    document.getElementById("favorite")?.addEventListener("change", function () {
+        let choice = this.value;
+        let message = "";
+
+        if (choice === "Arboretum") {
+            message = "Great choice! The Arboretum is perfect for nature lovers 🌿";
+        } else if (choice === "Museum") {
+            message = "Awesome! The Dallas Museum of Art is full of culture 🎨";
+        } else if (choice === "Perot") {
+            message = "Nice! The Perot Museum is super interactive 🔬";
+        }
+
+        document.getElementById("result").textContent = message;
+    });
+</script>
+</body>
+</html>
