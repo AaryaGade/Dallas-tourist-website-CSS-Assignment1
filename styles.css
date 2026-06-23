@@ -1,0 +1,238 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f5f5f5;
+}
+
+/* Header */
+header {
+    background: #0b1f3a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Main container */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Hero */
+.hero {
+    background: #ddd;
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hero-text .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #0b1f3a;
+    color: white;
+    text-decoration: none;
+}
+
+/* Highlights layout (IMPORTANT FIX) */
+.highlights {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* Cards */
+.card {
+    background: white;
+    padding: 20px;
+    flex: 1;
+    min-width: 250px;
+    border-radius: 10px;
+}
+
+/* Images (IMPORTANT FIX if you add any later) */
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Video fix */
+.video {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.video iframe {
+    width: 100%;
+    height: 400px;
+    max-width: 800px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: #0b1f3a;
+    color: white;
+}
+.page-nav {
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.page-nav .nav-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    margin: 0 10px;
+    background-color: #f5d6a1; /* soft beige/pastel */
+    color: #0b1f3a; /* dark blue text */
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 14px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+}
+
+.page-nav .nav-btn:hover {
+    background-color: #ffdca8; /* lighter pastel on hover */
+    transform: translateY(-2px);
+}
+
+.page-nav span {
+    font-size: 14px;
+    color: #0b1f3a;
+    margin: 0 5px;
+}
+/* Contact Form Section */
+.contact-form {
+    width: 90%;
+    max-width: 700px;
+    margin: 50px auto;
+    text-align: center; /* aligns the h2 title */
+    font-family: 'Arial', sans-serif;
+}
+
+.contact-form h2 {
+    margin-bottom: 30px;
+    color: #0b1f3a;
+    font-size: 28px;
+}
+
+/* Form */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* plenty of space between questions */
+}
+
+/* Each question box */
+.form-question {
+    background-color: #fce8d5; /* soft pastel beige */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+}
+
+.form-question:hover {
+    transform: translateY(-3px);
+}
+
+/* Label styling */
+.form-question label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #0b1f3a;
+}
+
+/* Input, textarea, select styling */
+.form-question input,
+.form-question textarea,
+.form-question select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: #fff7f0;
+}
+
+/* Textarea height */
+.form-question textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Submit button */
+.contact-form button {
+    padding: 12px 25px;
+    background-color: #f5d6a1; /* soft pastel */
+    color: #0b1f3a;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+}
+
+.contact-form button:hover {
+    background-color: #ffdca8; /* lighter pastel on hover */
+    transform: translateY(-2px);
+}
+.slideshow-container {
+    position: relative;
+    width: 600px;        /* fixed width */
+    margin: 30px auto;
+    text-align: center;
+}
+
+/* Slideshow image */
+#slide {
+    width: 100%;         /* scale to container width */
+    height: auto;        /* maintain aspect ratio */
+    max-height: 400px;   /* optional, prevents very tall images */
+    display: block;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+}
+
+.page-img {
+    width: 80%;        /* makes the image smaller relative to page width */
+    max-width: 600px;  /* limits the maximum size */
+    height: auto;      /* keeps aspect ratio intact, no cropping */
+    display: block;
+    margin: 20px auto; /* centers image and adds spacing above/below */
+    border-radius: 12px; /* optional: slightly rounded corners to make it look cute */
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2); /* optional: adds subtle depth */
+}
